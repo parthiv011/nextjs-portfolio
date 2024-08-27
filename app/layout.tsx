@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
+import { twMerge } from "tailwind-merge";
 
 const sans = DM_Sans({ subsets: ["latin"] });
 
@@ -16,7 +17,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={sans.className}>{children}</body>
+      <body
+        className={twMerge(
+          sans.className,
+          "bg-gray-950 text-white antialiased"
+        )}
+      >
+        {children}
+      </body>
     </html>
   );
 }
