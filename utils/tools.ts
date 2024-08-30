@@ -1,4 +1,4 @@
-import react from "@/public/Icon/html5.svg";
+import react from "@/public/Icon/react.svg";
 export const tools = [
   {
     title: "React",
