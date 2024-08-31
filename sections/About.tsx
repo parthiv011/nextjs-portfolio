@@ -10,7 +10,7 @@ import { CardHeader } from "@/components/shared/CardHeader";
 
 export const About = () => {
   return (
-    <section className="py-16">
+    <section id="about" className="py-16 lg:py-28">
       <div className="container">
         <SectionHeader
           title="About Me"
@@ -18,44 +18,47 @@ export const About = () => {
           description="Know More about Who I am, What I do!"
         />
         <div className="mt-20 flex flex-col gap-8">
-          <div className="md:grid md:grid-cols-5 gap-8">
-            <Card classname="h-[320px] p-0 md:col-span-2">
+          <div className="grid grid-cols-1 gap-8 md:grid md:grid-cols-5 md:gap-8">
+            <Card className="h-[320px] p-0 md:col-span-2">
               <div>
                 <CardHeader
                   title="My Tech Stack"
                   description=" Explore the techs I used to craft digital experiences."
-                  classname="px-6 pt-6"
+                  classname="px-6 pt-6 md:px-10 md:py-8"
                 />
-                <LanguageItems languages={languages} classname="mt-6" />
+                <LanguageItems languages={languages} classname="mt-6 md:mt-0" />
                 <LanguageItems
                   languages={languages}
                   classname="mt-6 -translate-x-1/2"
                 />
               </div>
             </Card>
-            <Card classname="md:col-span-3">
-              <div>
-                <CardHeader
-                  title="Library & Frameworks"
-                  description="Explore How I use modern technologies to scale performances of
+            <Card className="h-[420px] p-0 md:col-span-3 flex flex-col">
+              <CardHeader
+                title="Library & Frameworks"
+                description="Explore How I use modern technologies to scale performances of
                 the applications."
-                />
-                <div className="grid grid-cols-3 gap-4">
-                  {tools.map((tool) => (
-                    <div
-                      key={tool.title}
-                      className="inline-flex items-center bg-gradient-to-r from-blue-300 to-indigo-400 h-12 px-6 py-1.5 rounded-xl gap-2"
-                    >
-                      <TechIcon component={tool.iconName} />
-                      <span className="font-medium text-gray-950">
-                        {tool.title}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                classname="px-6 py-6 md:px-10 md:py-8"
+              />
+              <div className="relative flex-1">
+                {tools.map((tool) => (
+                  <div
+                    key={tool.title}
+                    className="inline-flex items-center bg-gradient-to-r from-blue-300 to-indigo-400 h-12 px-6 py-2 rounded-md gap-2 absolute"
+                    style={{
+                      top: tool.top,
+                      left: tool.left,
+                    }}
+                  >
+                    <TechIcon component={tool.iconName} />
+                    <span className="font-medium text-gray-950">
+                      {tool.title}
+                    </span>
+                  </div>
+                ))}
               </div>
             </Card>
-            <Card classname="h-[320px] md:col-span-3">
+            <Card className="h-fit md:col-span-3 px-6">
               <div>
                 <CardHeader
                   title="Beginner’s Guide: How to handle two or more Github accounts on
@@ -74,7 +77,7 @@ export const About = () => {
                 </div>
               </div>
             </Card>
-            <Card classname="h-[320px] md:col-span-2">
+            <Card className="h-fit md:col-span-2 px-6">
               <div>
                 <CardHeader
                   title="Beginner’s Guide: How to use Docker for Web developers?"

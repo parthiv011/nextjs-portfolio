@@ -12,7 +12,9 @@ export const CardHeader = ({
   return (
     <div className={twMerge("flex flex-col", classname)}>
       <h3 className="text-3xl font-semibold">{title}</h3>
-      <p className="text-white/60 text-sm mt-2 ">{description}</p>
+      <p className="text-white/60 text-sm mt-2 lg:text-base max-w-md">
+        {description}
+      </p>
     </div>
   );
 };

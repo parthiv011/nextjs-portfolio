@@ -4,6 +4,7 @@ import ArrowUpRight from "@/public/Icon/arrow-up-right.svg";
 import grainImage from "@/public/grain.jpg";
 import Image from "next/image";
 import { SectionHeader } from "@/components/shared/SectionHeader";
+import { Card } from "@/components/shared/Card";
 
 const projects = [
   {
@@ -46,7 +47,7 @@ const projects = [
 
 export const Projects = () => {
   return (
-    <section className="pb-16 lg:py-24">
+    <section id="projects" className="pb-16 lg:py-24">
       <div className="container">
         <SectionHeader
           title="Real World results"
@@ -54,10 +55,13 @@ export const Projects = () => {
           description="See How I transformed my skills into digital experiences"
         />
         <div className="flex flex-col mt-10 gap-20 md:mt-20">
-          {projects.map((project) => (
-            <div
+          {projects.map((project, index) => (
+            <Card
               key={project.title}
-              className="bg-gray-900 rounded-3xl relative overflow-hidden z-0 after:z-10 after:content-[''] after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-white/20 px-8 pt-8 pointer-events-none md:pt-12 md:px-10 lg:pt-16 lg:px-20"
+              className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky"
+              style={{
+                top: `calc(64px + ${index * 40}px)`,
+              }}
             >
               <div
                 className="absolute inset-0 -z-10 opacity-5"
@@ -99,7 +103,7 @@ export const Projects = () => {
                   />
                 </div>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
       </div>

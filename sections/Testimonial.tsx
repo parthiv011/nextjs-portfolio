@@ -2,6 +2,7 @@ import { SectionHeader } from "@/components/shared/SectionHeader";
 import memojiAvatar1 from "@/public/memoji-avatar-1.png";
 import grainImage from "@/public/grain.jpg";
 import Image from "next/image";
+import { Card } from "@/components/shared/Card";
 
 const testimonials = [
   {
@@ -48,10 +49,7 @@ export const Testimonial = () => {
         <div className="mt-16 lg:mt-24 flex overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <div className="flex flex-none gap-8">
             {testimonials.map((testimonial) => (
-              <div
-                key={testimonial.name}
-                className="bg-gray-900 rounded-3xl relative overflow-hidden z-0 after:z-10 after:content-[''] after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-white/20 px-8 pt-8 pointer-events-none p-6 max-w-xs md:max-w-md md:p-8"
-              >
+              <Card className="p-6 max-w-xs md:max-w-md md:p-8 hover:-rotate-3 transition duration-500">
                 <div
                   className="absolute inset-0 -z-10 opacity-5"
                   style={{
@@ -76,7 +74,7 @@ export const Testimonial = () => {
                 <p className="text-sm md:text-base mt-4 md:mt-6 lg:mt-8">
                   {testimonial.text}
                 </p>
-              </div>
+              </Card>
             ))}
           </div>
         </div>

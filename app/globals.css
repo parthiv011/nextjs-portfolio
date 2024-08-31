@@ -8,7 +8,7 @@
   }
 
   .hero-ring {
-    @apply absolute inset-0  border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-indigo-500/10 shadow-[0_0_80px_inset] shadow-indigo-600/5;
+    @apply absolute inset-0 border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-indigo-500/10 shadow-[0_0_80px_inset] shadow-indigo-600/5;
   }
 }
 
@@ -16,4 +16,13 @@
   .container {
     @apply lg:max-w-5xl;
   }
+
+  /* Add smooth scrolling to everything */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+}
+
+html {
+  @apply scroll-smooth;
 }
