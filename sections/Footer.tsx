@@ -31,7 +31,7 @@ export const Footer = () => {
               <a
                 href={link.url}
                 key={link.title}
-                className="inline-flex items-center gap-1.5"
+                className="inline-flex items-center gap-1.5 hover:transform hover:scale-105 duration-200"
                 target="_blank"
                 rel="noopener noreferrer"
               >

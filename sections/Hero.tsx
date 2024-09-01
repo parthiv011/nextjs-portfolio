@@ -10,7 +10,12 @@ import { HeroOrbit } from "@/components/shared/HeroOrbit";
 export const HeroSection = () => {
   function onClickHandler() {
     const element = document.getElementById("projects");
-    console.log(element);
+    // console.log(element);
+    element?.scrollIntoView({ behavior: "smooth" });
+  }
+  function onClickHandler2() {
+    const element = document.getElementById("contact");
+    // console.log(element);
     element?.scrollIntoView({ behavior: "smooth" });
   }
 
@@ -72,7 +77,7 @@ export const HeroSection = () => {
           </button>
           <button
             className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 px-6 h-12 rounded-xl hover:bg-gray-200 z-10 transition-colors"
-            onClick={onClickHandler}
+            onClick={onClickHandler2}
           >
             <span>👋</span>
             <span className="font-semibold ">Let's Connect</span>
