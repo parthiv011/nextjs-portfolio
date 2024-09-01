@@ -1,7 +1,6 @@
 import saasImage from "@/public/payX.png";
 import CheckIcon from "@/public/Icon/check-circle.svg";
 import ArrowUpRight from "@/public/Icon/arrow-up-right.svg";
-import grainImage from "@/public/grain.jpg";
 import Image from "next/image";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { Card } from "@/components/shared/Card";
@@ -20,27 +19,27 @@ const projects = [
     image: saasImage,
   },
   {
-    company: "Innovative Co",
-    year: "2021",
-    title: "Light Saas Landing Page",
+    company: "Personal Project",
+    year: "2024",
+    title: "BookIt.com-backend",
     results: [
       { title: "Boosted sales by 20%" },
       { title: "Expanded customer reach by 35%" },
       { title: "Increased brand awareness by 15%" },
     ],
-    link: "https://youtu.be/7hi5zwO75yc",
+    link: "https://github.com/parthiv",
     image: saasImage,
   },
   {
-    company: "Quantum Dynamics",
+    company: "Personal Project",
     year: "2023",
-    title: "AI Startup Landing Page",
+    title: "PaymentX",
     results: [
       { title: "Enhanced user experience by 40%" },
       { title: "Improved site speed by 50%" },
       { title: "Increased mobile traffic by 35%" },
     ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
+    link: "https://github.com/parthiv",
     image: saasImage,
   },
 ];
@@ -58,19 +57,13 @@ export const Projects = () => {
           {projects.map((project, index) => (
             <Card
               key={project.title}
-              className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky"
+              className="sticky top-0 px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20"
               style={{
                 top: `calc(64px + ${index * 40}px)`,
               }}
             >
-              <div
-                className="absolute inset-0 -z-10 opacity-5"
-                style={{
-                  backgroundImage: `url(${grainImage.src})`,
-                }}
-              ></div>
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
-                <div className="lg:pb-16">
+                <div className="lg:pb-16 relative z-10">
                   <div className="inline-flex gap-2 bg-gradient-to-r from-emerald-300 to-sky-400 font-bold text-sm uppercase tracking-widest text-transparent bg-clip-text">
                     <span>{project.company}</span>
                     <span>&bull;</span>
@@ -82,20 +75,28 @@ export const Projects = () => {
                   <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
                   <ul className="flex flex-col mt-4 gap-4 md:mt-5">
                     {project.results.map((result) => (
-                      <li className="flex gap-2 text-sm md:text-base text-white/50">
+                      <li
+                        className="flex gap-2 text-sm md:text-base text-white/50"
+                        key={result.title}
+                      >
                         <CheckIcon className="size-5 md:size-6" />
                         <span>{result.title}</span>
                       </li>
                     ))}
                   </ul>
-                  <a href={project.link}>
+                  <a
+                    href={project.link}
+                    className="relative z-20"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <button className="bg-white text-gray-950 h-12 rounded-xl w-full md:w-auto px-6 items-center justify-center font-semibold gap-2 mt-8 inline-flex">
                       <span>Visit Site</span>
                       <ArrowUpRight className="size-4" />
                     </button>
                   </a>
                 </div>
-                <div className="relative">
+                <div className="relative z-0">
                   <Image
                     src={project.image}
                     alt={project.title}

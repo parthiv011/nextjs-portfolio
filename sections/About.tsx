@@ -1,3 +1,5 @@
+"use client";
+
 import { TechIcon } from "@/components/About/TechIcon";
 import { Card } from "@/components/shared/Card";
 import { SectionHeader } from "@/components/shared/SectionHeader";
@@ -7,8 +9,11 @@ import { tools } from "@/utils/tools";
 import ArrowUpRight from "@/public/Icon/arrow-up-right.svg";
 import { LanguageItems } from "@/components/About/LanguageItems";
 import { CardHeader } from "@/components/shared/CardHeader";
+import { motion } from "framer-motion";
+import { useRef } from "react";
 
 export const About = () => {
+  const constraintRef = useRef(null);
   return (
     <section id="about" className="py-16 lg:py-28">
       <div className="container">
@@ -26,10 +31,15 @@ export const About = () => {
                   description=" Explore the techs I used to craft digital experiences."
                   classname="px-6 pt-6 md:px-10 md:py-8"
                 />
-                <LanguageItems languages={languages} classname="mt-6 md:mt-0" />
                 <LanguageItems
                   languages={languages}
-                  classname="mt-6 -translate-x-1/2"
+                  classname="mt-6 md:mt-0"
+                  itemsWrapperClass="animate-move-left [animation-duration:30s]"
+                />
+                <LanguageItems
+                  languages={languages}
+                  classname="mt-6"
+                  itemsWrapperClass="-translate-x-1/2 animate-move-right [animation-duration:15s]"
                 />
               </div>
             </Card>
@@ -40,25 +50,27 @@ export const About = () => {
                 the applications."
                 classname="px-6 py-6 md:px-10 md:py-8"
               />
-              <div className="relative flex-1">
+              <div className="relative flex-1" ref={constraintRef}>
                 {tools.map((tool) => (
-                  <div
+                  <motion.div
                     key={tool.title}
                     className="inline-flex items-center bg-gradient-to-r from-blue-300 to-indigo-400 h-12 px-6 py-2 rounded-md gap-2 absolute"
                     style={{
                       top: tool.top,
                       left: tool.left,
                     }}
+                    drag
+                    dragConstraints={constraintRef}
                   >
                     <TechIcon component={tool.iconName} />
                     <span className="font-medium text-gray-950">
                       {tool.title}
                     </span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </Card>
-            <Card className="h-fit md:col-span-3 px-6">
+            <Card className="h-fit md:col-span-3 p-6">
               <div>
                 <CardHeader
                   title="Beginner’s Guide: How to handle two or more Github accounts on
@@ -77,7 +89,7 @@ export const About = () => {
                 </div>
               </div>
             </Card>
-            <Card className="h-fit md:col-span-2 px-6">
+            <Card className="h-fit md:col-span-2 p-6">
               <div>
                 <CardHeader
                   title="Beginner’s Guide: How to use Docker for Web developers?"
