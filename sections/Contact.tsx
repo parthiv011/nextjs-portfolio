@@ -23,10 +23,12 @@ export const Contact = () => {
               </p>
             </div>
             <div>
-              <button className="text-white bg-gray-900 inline-flex items-center px-6 h-12 rounded-xl gap-2 w-max">
-                <span className="font-semibold">Contact Me</span>
-                <ArrowUpRight className="size-4" />
-              </button>
+              <a href="mailto:parmarparthiv77@gmail.com">
+                <button className="text-white bg-gray-900 inline-flex items-center px-6 h-12 rounded-xl gap-2 w-max">
+                  <span className="font-semibold">Contact Me</span>
+                  <ArrowUpRight className="size-4" />
+                </button>
+              </a>
             </div>
           </div>
         </div>

@@ -11,11 +11,17 @@ const projects = [
     year: "2024",
     title: "BookIt.com",
     results: [
-      { title: "Styled Components" },
-      { title: "React Hook form" },
-      { title: "Tanstack Query" },
+      { title: "Developed web based Booking Administration System (BAS)" },
+      {
+        title:
+          "Improved load times by 40% and effectively increased user engagement.",
+      },
+      {
+        title:
+          "Data visualization with charts, management with dates and filtering.",
+      },
     ],
-    link: "https://github.com/parthiv",
+    link: "https://github.com/parthiv011/bookIt.com",
     image: saasImage,
   },
   {
@@ -23,11 +29,20 @@ const projects = [
     year: "2024",
     title: "BookIt.com-backend",
     results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
+      {
+        title:
+          "API for hotel admins to manage bookings, cabins, guests, checkins & outs.",
+      },
+      {
+        title:
+          "Designed a relational database schema and managed it with ORMs.",
+      },
+      {
+        title:
+          " Refined data fetching by date-based filtering and sorting, and handled file uploads.",
+      },
     ],
-    link: "https://github.com/parthiv",
+    link: "https://github.com/parthiv011/bookIt-backend",
     image: saasImage,
   },
   {
@@ -35,11 +50,11 @@ const projects = [
     year: "2023",
     title: "PaymentX",
     results: [
-      { title: "Enhanced user experience by 40%" },
+      { title: "User-to-User money transfer application with MERN stack." },
       { title: "Improved site speed by 50%" },
       { title: "Increased mobile traffic by 35%" },
     ],
-    link: "https://github.com/parthiv",
+    link: "https://github.com/parthiv011/PaymentApp",
     image: saasImage,
   },
 ];
