@@ -1,7 +1,10 @@
 import js from "@/public/Icon/js.svg";
-import html from "@/public/Icon/html5.svg";
-import css from "@/public/Icon/html5.svg";
-import github from "@/public/Icon/html5.svg";
+import html from "@/public/Icon/html.svg";
+import css from "@/public/Icon/css.svg";
+import github from "@/public/Icon/github.svg";
+import java from "@/public/Icon/java.svg";
+import ts from "@/public/Icon/ts.svg";
+import sql from "@/public/Icon/sql.svg";
 
 export const languages = [
   {
@@ -18,15 +21,15 @@ export const languages = [
   },
   {
     title: "Java",
-    iconName: js,
+    iconName: java,
   },
   {
     title: "Typescript",
-    iconName: js,
+    iconName: ts,
   },
   {
     title: "SQL",
-    iconName: js,
+    iconName: sql,
   },
   {
     title: "Git",
